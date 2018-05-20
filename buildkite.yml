@@ -1,3 +1,7 @@
 steps:
-  - command: "git --no-pager log; true"
-    label: "fake step"
+  - command: "pdflatex --help"
+    label: "pdflatex test [public]"
+    plugins:
+      docker#v1.1.1:
+        image: "blang/latex:ubuntu"
+
