@@ -1,3 +1,3 @@
 steps:
-  - command: "git --no-pager log; true"
+  - command: "true"
     label: "fake step [public]"
