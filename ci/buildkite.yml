@@ -1,5 +1,8 @@
 steps:
-  - command: "true"
+  - command: "pdflatex --help"
     label: "fake step [public]"
+    plugins:
+      docker#v1.1.1:
+        image: "blang/latex:ubuntu"
   - command: "[[ -z \"$BUILDKITE_TAG\" ]] || ci/upload-release-asset.sh mvines ci-gate-test \"$BUILDKITE_TAG\" README.md"
     label: "upload release assets"
