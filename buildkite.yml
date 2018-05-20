@@ -1,3 +1,5 @@
 steps:
   - command: "true"
     label: "fake step [public]"
+  - command: "[[ -z \"$BUILDKITE_TAG\" ]] || ci/upload-release-asset.sh mvines ci-gate-test \"$BUILDKITE_TAG\" README.md"
+    label: "upload release assets"
