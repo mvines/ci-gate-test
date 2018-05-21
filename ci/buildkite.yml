@@ -1,5 +1,5 @@
 steps:
-  - command: "echo $CI; whoami; id; apt-get update; apt-get install -y wget"
+  - command: "echo $CI; whoami; id; if ! which wget; then apt-get update; apt-get install -y wget; fi; wget --help"
     label: "fake step [public]"
     plugins:
       docker#v1.1.1:
