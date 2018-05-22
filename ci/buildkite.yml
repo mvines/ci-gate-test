@@ -1,8 +1,15 @@
 steps:
-  - command: "echo $CI; whoami; id; if ! which wget; then apt-get update; apt-get install -y wget; fi; wget --help"
-    label: "fake step [public]"
+  - command: "echo $CI; touch hi; ls -l hi; whoami; id; if ! which wget; then apt-get update; apt-get install -y wget; fi; wget --help"
+    label: "touch hi [public]"
     plugins:
       docker#v1.1.1:
         image: "blang/latex:ubuntu"
         environment:
           - CI=$CI
+  - command: "ls -l hi"
+    label: "hi [public]"
+  - command: "ls -l hi"
+    label: "docker hi [public]"
+    plugins:
+      docker#v1.1.1:
+        image: "blang/latex:ubuntu"  
