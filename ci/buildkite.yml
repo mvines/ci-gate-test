@@ -1,15 +1,8 @@
 steps:
-  - command: "pwd; touch hi; ls -l; mount"
-    label: "touch hi [public]"
-    plugins:
-      docker#v1.1.1:
-        image: "blang/latex:ubuntu"
-        environment:
-          - CI=$CI
-  - command: "pwd; ls -l"
+  - command: "id; touch foo; ls -l foo"
     label: "hi [public]"
-  - command: "pwd; ls -l"
-    label: "docker hi [public]"
     plugins:
       docker#v1.1.1:
-        image: "blang/latex:ubuntu"  
+        image: "rust"
+        user: "998:997"
+       
