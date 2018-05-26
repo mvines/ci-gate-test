@@ -1,8 +1,11 @@
 steps:
-  - command: "id; touch foo; ls -l foo"
+  - command: "set; touch foo; ls -l foo"
     label: "hi [public]"
     plugins:
       docker#v1.1.1:
         image: "rust"
         user: "998:997"
+        environment:
+          - FOO
+
        
