@@ -1,5 +1,14 @@
 steps:
-  - command: "true"
-    label: "fake step [public]"
-  - command: "[[ -z \"$BUILDKITE_TAG\" ]] || ci/upload-release-asset.sh mvines ci-gate-test \"$BUILDKITE_TAG\" README.md"
-    label: "upload release assets"
+  - command: "sleep 60"
+    label: "sleep [public]"
+  - wait
+  - command: "set; touch foo; ls -l foo"
+    label: "hi [public]"
+    plugins:
+      docker#v1.1.1:
+        image: "rust"
+        user: "998:997"
+        environment:
+          - FOO
+
+       
