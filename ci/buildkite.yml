@@ -1,4 +1,7 @@
 steps:
+  - command: "sleep 60"
+    label: "sleep [public]"
+  - wait
   - command: "set; touch foo; ls -l foo"
     label: "hi [public]"
     plugins:
