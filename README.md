@@ -1,6 +1,2 @@
 # ci-gate-test
-Test repo for ci-gat
-
-
-
-ddd
+Test repo for ci-gate
