@@ -1,3 +1,3 @@
 steps:
   - command: "sleep 1s"
-    label: "zzzzz [public]"
+    label: "test [public]"
