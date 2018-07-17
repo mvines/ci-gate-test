@@ -1,3 +1,3 @@
 steps:
-  - command: "sleep 1s"
+  - command: "sleep 60; echo hi > hi.txt; buildkite-agent artifact upload hi.txt; false"
     label: "test [public]"
