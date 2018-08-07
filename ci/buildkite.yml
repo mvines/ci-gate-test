@@ -1,3 +1,3 @@
 steps:
-  - command: "set -x; ulimit -a; ulimit -Hn; ulimit -Sn"
+  - command: "set -x; ulimit -a; ulimit -Hn; ulimit -Sn; sudo ulimit -n 16000; ulimit -n"
     label: "zzzzz [public]"
